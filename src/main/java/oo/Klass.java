@@ -3,10 +3,10 @@ package oo;
 import java.util.Objects;
 
 public class Klass {
-    private final Integer id;
+    private final Integer classNum;
 
-    public Klass(Integer id) {
-        this.id = id;
+    public Klass(Integer classNum) {
+        this.classNum = classNum;
     }
 
     @Override
@@ -14,11 +14,15 @@ public class Klass {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Klass klass = (Klass) o;
-        return Objects.equals(id, klass.id);
+        return Objects.equals(classNum, klass.classNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(classNum);
+    }
+
+    public Integer getClassNum() {
+        return classNum;
     }
 }
