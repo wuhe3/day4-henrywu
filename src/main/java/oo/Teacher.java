@@ -15,6 +15,7 @@ public class Teacher extends Person {
     public void assignTo(Klass klass) {
         if (!classes.contains(klass)) {
             classes.add(klass);
+            klass.attach(this);
         }
     }
 
