@@ -12,6 +12,9 @@ public class Student extends Person {
         if (klass == null) {
             return super.introduce().concat(" I am a student.");
         }
+        if (klass.isLeader(this)) {
+            return super.introduce().concat(String.format(" I am a student. I am the leader of class %d.", klass.getClassNum()));
+        }
         return super.introduce().concat(String.format(" I am a student. I am in class %d.", klass.getClassNum()));
     }
 
