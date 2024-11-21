@@ -1,6 +1,5 @@
 package oo;
 
-
 public class Student extends Person {
     private Klass klass;
 
@@ -10,9 +9,11 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
+        if (klass == null) {
+            return super.introduce().concat(" I am a student.");
+        }
         return super.introduce().concat(String.format(" I am a student. I am in class %d.", klass.getClassNum()));
     }
-
 
     public void join(Klass klass) {
         this.klass = klass;

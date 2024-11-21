@@ -7,6 +7,8 @@ public class Klass {
 
     public Klass(Integer classNum) {
         this.classNum = classNum;
+
+
     }
 
     @Override
@@ -15,6 +17,7 @@ public class Klass {
         if (o == null || getClass() != o.getClass()) return false;
         Klass klass = (Klass) o;
         return Objects.equals(classNum, klass.classNum);
+
     }
 
     @Override
