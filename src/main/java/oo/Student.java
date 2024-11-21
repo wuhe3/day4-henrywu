@@ -9,13 +9,19 @@ public class Student extends Person {
 
     @Override
     public String introduce() {
+        return super.introduce().concat(generateStudentIntroduction());
+    }
+
+    private String generateStudentIntroduction() {
         if (klass == null) {
-            return super.introduce().concat(" I am a student.");
+            return " I am a student.";
         }
-        if (klass.isLeader(this)) {
-            return super.introduce().concat(String.format(" I am a student. I am the leader of class %d.", klass.getClassNum()));
-        }
-        return super.introduce().concat(String.format(" I am a student. I am in class %d.", klass.getClassNum()));
+
+        return String.format(" I am a student. %s",
+                klass.isLeader(this)
+                        ? String.format("I am the leader of class %d.", klass.getClassNum())
+                        : String.format("I am in class %d.", klass.getClassNum())
+        );
     }
 
     public void join(Klass klass) {
